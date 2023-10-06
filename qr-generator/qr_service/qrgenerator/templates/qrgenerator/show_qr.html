@@ -1,0 +1,17 @@
+{% extends 'qrgenerator/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-9 text-center">
+            <h1>QR Code Generado</h1>
+            <p>URL: {{ qr_code.url }}</p>
+           <p> <img src="{{ qr_code.qr_image.url }}" alt="QR Code" class="img-fluid"></p>
+            <button type="submit" class="btn btn-light btn btn-block"><a href='{% url "generate_qr" %}' >Generar otro QR</a></button>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

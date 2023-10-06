@@ -1,0 +1,22 @@
+{% extends 'qrgenerator/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-9 text-center">
+            <h1>Generar QR Code</h1>
+            <form method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-block my-4" name="url" placeholder="Ingrese la URL">
+                </div>
+                <button type="submit" class="btn btn-warning btn btn-block">Generar QR</button>
+            </form>
+            
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
